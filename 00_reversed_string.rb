@@ -1,1 +1,0 @@
-puts "stressed".reverse
