@@ -24,8 +24,16 @@
 def word_n_gram sentence, n
   words = sentence.split(' ')
   words.each_index{|index|
-    puts words[index..index+(n-1)]*' '
+    puts words[index..index+(n-1)].join(' ')
   }
 end
 
-word_n_gram("I am an NLPer", 3)
+def char_n_gram sentence, n
+  chars = sentence.split('')
+  chars.each_index{|index|
+    puts chars[index..index+(n-1)].join
+  }
+end
+
+word_n_gram("I am an NLPer", 2)
+char_n_gram("I am an NLPer", 2)
