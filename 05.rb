@@ -21,11 +21,11 @@
 #  er
 #  r
 
-def word_bi_gram sentence
-  words = sentence.scan(/\w+/)
+def word_n_gram sentence, n
+  words = sentence.split(' ')
   words.each_index{|index|
-    puts words[index..index+1]*" "
+    puts words[index..index+(n-1)]*' '
   }
 end
 
-word_bi_gram("I am an NLPer")
+word_n_gram("I am an NLPer", 3)
