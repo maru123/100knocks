@@ -22,23 +22,23 @@
 #  r
 
 def n_gram sentence, n
-  char_n_gram sentence, n
-  word_n_gram sentence, n
-end
-
-def word_n_gram sentence, n
+  puts '---文字n-gram---'
+  puts char_n_gram sentence, n
   puts '---単語n-gram---'
-  words = sentence.split(' ')
-  words.each_index{|index|
-    puts words[index..index+(n-1)].join(' ')
-  }
+  puts word_n_gram sentence, n
 end
 
 def char_n_gram sentence, n
-  puts '---文字n-gram---'
   chars = sentence.split('')
-  chars.each_index{|index|
-    puts chars[index..index+(n-1)].join
+  chars.each_index.each_with_object([]){|index, array|
+    array << chars[index..index+(n-1)].join
+  }
+end
+
+def word_n_gram sentence, n
+  words = sentence.split(' ')
+  words.each_index.each_with_object([]){|index, array|
+    array << words[index..index+(n-1)].join(' ')
   }
 end
 
