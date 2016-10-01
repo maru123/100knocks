@@ -22,15 +22,10 @@
 #  r
 
 def word_bi_gram sentence
-  sentence.scan(/[^ .]+/)[0..1]*" "
+  words = sentence.scan(/\w+/)
+  words.each_index{|index|
+    puts words[index..index+1]*" "
+  }
 end
 
-puts word_bi_gram("I am an NLPer")
-
-# class TestToHex < Minitest::Test
-#   def test_to_hex
-#     assert_equal '#000000', to_hex(0, 0, 0)
-#     assert_equal '#ffffff', to_hex(255, 255, 255)
-#     assert_equal '#043c78', to_hex(4, 60, 120)
-#   end
-# end
+word_bi_gram("I am an NLPer")
