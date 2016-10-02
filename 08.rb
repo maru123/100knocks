@@ -3,8 +3,8 @@
 # - その他の文字はそのまま出力
 # この関数を用い，英語のメッセージを暗号化・復号化せよ．
 def cipher string
-  string.chars.map{|char| char == char.upcase ? char : char.ord}.join
+  string.chars.map{|letter| letter == letter.upcase ? letter : (219 - letter.ord).chr}.join
 end
 
 puts cipher 'Could This Words Be Ciphered?'
-# puts decipher('C111117108100 T104105115 W111114100115 B101 C105112104101114101100?')
+puts cipher 'Clfow Tsrh Wliwh Bv Crksvivw?'
